@@ -5,17 +5,30 @@
       <h2 class="text-center text-3xl font-bold tracking-tight text-foreground md:text-6xl">
         Choose Your Arsenal.
       </h2>
-      <p class="mx-auto mt-4 max-w-[640px] text-center text-sm md:mt-5 md:text-lg" style="color:var(--color-eyebrow)">
+      <p
+        class="mx-auto mt-4 max-w-[640px] text-center text-sm md:mt-5 md:text-lg"
+        style="color:var(--color-eyebrow)"
+      >
         Built for the obsessed. Equip the exact skill set tailored to your subculture, and execute at the speed of thought.
       </p>
     </div>
 
     <div class="mt-14 md:mt-20">
       <MarqueeScroll :duration="50">
-        <div v-for="skill in skills" :key="skill.name" class="arsenal__card">
-          <div class="arsenal__card-icon">{{ skill.emoji }}</div>
-          <div class="arsenal__card-name">{{ skill.name }}</div>
-          <div class="arsenal__card-desc">{{ skill.desc }}</div>
+        <div
+          v-for="skill in skills"
+          :key="skill.name"
+          class="arsenal__card"
+        >
+          <div class="arsenal__card-icon">
+            {{ skill.emoji }}
+          </div>
+          <div class="arsenal__card-name">
+            {{ skill.name }}
+          </div>
+          <div class="arsenal__card-desc">
+            {{ skill.desc }}
+          </div>
         </div>
       </MarqueeScroll>
     </div>
@@ -33,7 +46,7 @@ const skills = [
   { name: 'Super Writer', desc: 'Polish any draft into publish-ready prose.', emoji: '✍️' },
   { name: 'GenZ Rizzer', desc: 'Generate openers that actually land.', emoji: '🔥' },
   { name: 'Crypto Degen', desc: 'Track wallets and fire off transactions fast.', emoji: '₿' },
-  { name: 'Super Fans', desc: 'Keep your people close, across every app.', emoji: '💜' },
+  { name: 'Super Fans', desc: 'Keep your people close, across every app.', emoji: '💜' }
 ]
 </script>
 

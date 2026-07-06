@@ -1,7 +1,10 @@
 <template>
   <!-- 多层光环扩散：每环用 ring-diffuse 动画改变 width/height（40→820px），
        inset:0 + margin:auto 保证环始终相对父容器居中。stagger 控制环间错峰。 -->
-  <div class="halo-rings" aria-hidden="true">
+  <div
+    class="halo-rings"
+    aria-hidden="true"
+  >
     <span
       v-for="r in rings"
       :key="r"
@@ -21,7 +24,7 @@ const props = withDefaults(defineProps<{
 }>(), {
   count: 3,
   duration: 6,
-  stagger: 2,
+  stagger: 2
 })
 
 const rings = computed(() => Array.from({ length: props.count }, (_, i) => i))

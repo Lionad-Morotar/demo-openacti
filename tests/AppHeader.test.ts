@@ -12,7 +12,7 @@ describe('AppHeader', () => {
     const wrapper = mount(AppHeader)
     const text = wrapper.text()
     expect(text).toContain('Words in. Actions out.')
-    expect(text).toContain("It doesn't predict your next word. It takes your next action.")
+    expect(text).toContain('It doesn\'t predict your next word. It takes your next action.')
   })
 
   it('logo 与导航图标 src 带 baseURL 拼接', () => {

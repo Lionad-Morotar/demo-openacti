@@ -1,5 +1,8 @@
 <template>
-  <span class="tracer-label" data-testid="tracer-label">{{ text }}</span>
+  <span
+    class="tracer-label"
+    data-testid="tracer-label"
+  >{{ text }}</span>
 </template>
 
 <script setup lang="ts">

@@ -130,3 +130,16 @@ body {
     scroll-margin-top: 64px;
   }
 }
+
+/* 可访问性：尊重 prefers-reduced-motion，禁用所有动画/过渡/平滑滚动。
+   仿站动画密集（nav 打字机、halo、marquee、connector），对前庭敏感用户必须降级。 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

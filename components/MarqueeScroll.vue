@@ -1,18 +1,31 @@
 <template>
   <!-- 无缝跑马灯：渲染 slot 两次为一组（group），track 用 creator-cards-marquee 平移 -50%，
        因前半组与后半组内容相同，平移到 -50% 时视觉无缝衔接。两端 mask 渐隐。 -->
-  <div class="marquee" :class="{ 'marquee--reverse': reverse }">
-    <div class="marquee__track" :style="{ animationDuration: `${duration}s` }">
-      <div class="marquee__group"><slot /></div>
-      <div class="marquee__group" aria-hidden="true"><slot /></div>
+  <div
+    class="marquee"
+    :class="{ 'marquee--reverse': reverse }"
+  >
+    <div
+      class="marquee__track"
+      :style="{ animationDuration: `${duration}s` }"
+    >
+      <div class="marquee__group">
+        <slot />
+      </div>
+      <div
+        class="marquee__group"
+        aria-hidden="true"
+      >
+        <slot />
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-withDefaults(defineProps<{ duration?: number; reverse?: boolean }>(), {
+withDefaults(defineProps<{ duration?: number, reverse?: boolean }>(), {
   duration: 40,
-  reverse: false,
+  reverse: false
 })
 </script>
 

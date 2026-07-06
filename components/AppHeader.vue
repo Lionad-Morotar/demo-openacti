@@ -1,14 +1,29 @@
 <template>
   <header class="app-header">
     <nav class="app-nav">
-      <a href="#" class="app-logo" aria-label="ACTI">
-        <img :src="asset('raw/img/logo-nav.png')" alt="ACTI" class="app-logo__img" />
+      <a
+        href="#"
+        class="app-logo"
+        aria-label="ACTI"
+      >
+        <img
+          :src="asset('raw/img/logo-nav.png')"
+          alt="ACTI"
+          class="app-logo__img"
+        >
       </a>
 
       <!-- nav-slot 打字机：5 行同周期 26s，负 delay 错峰，三动画（presence/typed/caret）同步。
            纯 CSS 实现，对齐原站机制：任意时刻仅一行落在 presence 可见段。 -->
-      <a class="nav-slot" href="#" aria-label="What an agentic keyboard does — rotating">
-        <span class="nav-slot-stage" aria-hidden="true">
+      <a
+        class="nav-slot"
+        href="#"
+        aria-label="What an agentic keyboard does — rotating"
+      >
+        <span
+          class="nav-slot-stage"
+          aria-hidden="true"
+        >
           <span
             v-for="(line, i) in taglines"
             :key="i"
@@ -16,18 +31,35 @@
             :style="{ '--w': `${widths[i]}px`, '--d': `-${(i * perLine).toFixed(2)}s` } as Record<string, string>"
           >
             <span class="nav-slot-typed">{{ line }}</span>
-            <span class="nav-slot-caret" aria-hidden="true"></span>
+            <span
+              class="nav-slot-caret"
+              aria-hidden="true"
+            />
           </span>
         </span>
       </a>
 
       <div class="app-nav__actions">
-        <a href="#" class="app-nav__action">
-          <img :src="asset('raw/img/icon-play.svg')" alt="" class="app-nav__icon" />
+        <a
+          href="#"
+          class="app-nav__action"
+        >
+          <img
+            :src="asset('raw/img/icon-play.svg')"
+            alt=""
+            class="app-nav__icon"
+          >
           <span>Action</span>
         </a>
-        <a href="#" class="app-nav__action">
-          <img :src="asset('raw/img/icon-discord.svg')" alt="" class="app-nav__icon" />
+        <a
+          href="#"
+          class="app-nav__action"
+        >
+          <img
+            :src="asset('raw/img/icon-discord.svg')"
+            alt=""
+            class="app-nav__icon"
+          >
           <span>Community</span>
         </a>
       </div>
@@ -36,6 +68,7 @@
 </template>
 
 <script setup lang="ts">
+import { ref, onMounted } from 'vue'
 import { joinBasePath } from '~/utils/publicPath'
 import { SITE_BASE } from '~/utils/site'
 
@@ -48,13 +81,33 @@ const taglines = [
   '“Press to type, hold to act.”',
   '“The first agentic keyboard.”',
   '“Every text field is an action layer.”',
-  "“It doesn't predict your next word. It takes your next action.”",
+  '“It doesn\'t predict your next word. It takes your next action.”'
 ]
 
-// 每行文本宽度（Outfit 实测），注入 --w 驱动 nav-slot-typed 的 width 展开
-const widths = [146, 168, 180, 214, 369]
+// 每行文本宽度：SSR 用预估 fallback，客户端 onMounted 后测量实际渲染宽度覆盖，
+// 避免 Outfit 字体未加载时打字展开宽度偏差。
+const widths = ref<number[]>([146, 168, 180, 214, 369])
 const TOTAL = 26 // 秒，对齐原站总周期
 const perLine = TOTAL / taglines.length // 5.2s 每行切换
+
+onMounted(() => {
+  const fontFamily = getComputedStyle(document.body).fontFamily
+  widths.value = taglines.map((text, i) => {
+    const probe = document.createElement('span')
+    Object.assign(probe.style, {
+      visibility: 'hidden',
+      position: 'absolute',
+      whiteSpace: 'nowrap',
+      fontFamily,
+      fontSize: '0.95rem',
+    })
+    probe.textContent = text
+    document.body.appendChild(probe)
+    const measured = Math.ceil(probe.getBoundingClientRect().width)
+    document.body.removeChild(probe)
+    return measured > 0 ? measured : (widths.value[i] ?? measured)
+  })
+})
 </script>
 
 <style scoped>

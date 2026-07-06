@@ -14,27 +14,64 @@
     />
 
     <div class="hero__badge relative z-10 mt-0 flex items-center gap-2 overflow-hidden rounded-full px-5 py-2">
-      <img class="hero__badge-deco" :src="asset('raw/img/badge-decoration.svg')" alt="" aria-hidden="true" />
-      <img class="hero__badge-logo relative z-[1] h-full" :src="asset('raw/img/icon-google.svg')" alt="" />
+      <img
+        class="hero__badge-deco"
+        :src="asset('raw/img/badge-decoration.svg')"
+        alt=""
+        aria-hidden="true"
+      >
+      <img
+        class="hero__badge-logo relative z-[1] h-full"
+        :src="asset('raw/img/icon-google.svg')"
+        alt=""
+      >
       <span class="hero__badge-text relative z-[1] text-sm font-medium text-foreground">Selected for Google AI Startups</span>
     </div>
 
     <div class="hero__title relative z-10 mt-[60px] md:mt-[90px] w-full max-w-[791px]">
-      <img class="hero__title-base block w-full h-auto" :src="asset('raw/img/hero-title-base.svg')" alt="Think it. ACTI on." />
+      <img
+        class="hero__title-base block w-full h-auto"
+        :src="asset('raw/img/hero-title-base.svg')"
+        alt="Think it. ACTI on."
+      >
       <!-- base.svg 的 ACTI 区域镂空（viewBox 304-502 无 path），用 hero-acti-4x.png 填充对齐 -->
-      <img class="hero__title-acti" :src="asset('raw/img/hero-acti-4x.png')" alt="" aria-hidden="true" />
+      <img
+        class="hero__title-acti"
+        :src="asset('raw/img/hero-acti-4x.png')"
+        alt=""
+        aria-hidden="true"
+      >
     </div>
 
-    <p class="hero__sub relative z-10 mt-6 text-center text-[18px] md:text-[24px] font-semibold" style="color:#999">
+    <p
+      class="hero__sub relative z-10 mt-6 text-center text-[18px] md:text-[24px] font-semibold"
+      style="color:#999"
+    >
       The World’s First Agentic Keyboard
     </p>
 
     <div class="hero__ctas relative z-10 mt-8 flex flex-wrap items-center justify-center gap-3">
-      <a href="https://apps.apple.com/us/app/id6745523677" target="_blank" rel="noopener">
-        <img class="h-[48px] w-auto" :src="asset('raw/img/appstore-badge.svg')" alt="Download on the App Store" />
+      <a
+        href="https://apps.apple.com/us/app/id6745523677"
+        target="_blank"
+        rel="noopener"
+      >
+        <img
+          class="h-[48px] w-auto"
+          :src="asset('raw/img/appstore-badge.svg')"
+          alt="Download on the App Store"
+        >
       </a>
-      <a href="https://play.google.com/store" target="_blank" rel="noopener">
-        <img class="h-[48px] w-auto" :src="asset('raw/img/googleplay-badge.svg')" alt="Get it on Google Play" />
+      <a
+        href="https://play.google.com/store"
+        target="_blank"
+        rel="noopener"
+      >
+        <img
+          class="h-[48px] w-auto"
+          :src="asset('raw/img/googleplay-badge.svg')"
+          alt="Get it on Google Play"
+        >
       </a>
     </div>
 
@@ -50,7 +87,12 @@
         :poster="asset('raw/img/poster-desktop.png')"
         :src="asset('raw/videos/Acti_showcase_desktop.mp4')"
       />
-      <button v-if="showToggle" class="hero__unmute" type="button" @click="toggleMute">
+      <button
+        v-if="showToggle"
+        class="hero__unmute"
+        type="button"
+        @click="toggleMute"
+      >
         {{ muted ? '取消静音' : '静音' }}
       </button>
     </div>

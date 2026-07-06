@@ -5,15 +5,15 @@ import tailwindcss from '@tailwindcss/vite'
 // baseURL 必须与仓库名一致（demo-openacti），GitHub Pages 子路径才能正确加载资源。
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  css: ['~/assets/css/main.css'],
-  compatibilityDate: '2026-07-06',
-  future: {
-    compatibilityVersion: 4,
-  },
   app: {
-    baseURL: '/demo-openacti/',
+    baseURL: '/demo-openacti/'
   },
+  css: ['~/assets/css/main.css'],
+  future: {
+    compatibilityVersion: 4
+  },
+  compatibilityDate: '2026-07-06',
   vite: {
-    plugins: [tailwindcss()],
-  },
+    plugins: [tailwindcss()]
+  }
 })

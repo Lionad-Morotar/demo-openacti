@@ -5,25 +5,44 @@
       <h2 class="text-center text-3xl font-bold tracking-tight text-foreground md:text-6xl">
         Acti Bar <span class="actibar__arrow">›</span> Space Bar
       </h2>
-      <p class="mt-4 max-w-[560px] text-center text-sm md:mt-5 md:max-w-[640px] md:text-lg" style="color:var(--color-eyebrow)">
+      <p
+        class="mt-4 max-w-[560px] text-center text-sm md:mt-5 md:max-w-[640px] md:text-lg"
+        style="color:var(--color-eyebrow)"
+      >
         No more app switching. Type your intent anywhere, long-press the Acti Bar, then invoke magic.
       </p>
 
       <div class="mt-10 flex flex-wrap items-center justify-center gap-3 md:mt-12 md:gap-4">
-        <template v-for="(step, i) in steps" :key="i">
-          <div class="actibar__step"><span class="actibar__step-num">{{ i + 1 }}</span>{{ step }}</div>
-          <span v-if="i < steps.length - 1" class="actibar__step-arrow">›</span>
+        <template
+          v-for="(step, i) in steps"
+          :key="i"
+        >
+          <div class="actibar__step">
+            <span class="actibar__step-num">{{ i + 1 }}</span>{{ step }}
+          </div>
+          <span
+            v-if="i < steps.length - 1"
+            class="actibar__step-arrow"
+          >›</span>
         </template>
       </div>
 
       <div class="actibar__stage relative mt-14 flex items-center justify-center md:mt-20">
-        <HaloRings :count="4" :duration="7" :stagger="1.6" />
+        <HaloRings
+          :count="4"
+          :duration="7"
+          :stagger="1.6"
+        />
         <div class="actibar__phone relative">
           <div class="actibar__command-bar">
             <span class="actibar__command-text">{{ currentCommand }}</span>
           </div>
           <div class="actibar__keyboard">
-            <div v-for="(row, ri) in keyboardRows" :key="ri" class="actibar__krow">
+            <div
+              v-for="(row, ri) in keyboardRows"
+              :key="ri"
+              class="actibar__krow"
+            >
               <span
                 v-for="key in row"
                 :key="key"
@@ -53,13 +72,13 @@ const actiKeys = new Set(['A', 'C', 'T', 'I'])
 const keyboardRows: string[][] = [
   ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
   ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
-  ['Z', 'X', 'C', 'V', 'B', 'N', 'M'],
+  ['Z', 'X', 'C', 'V', 'B', 'N', 'M']
 ]
 
 const commands = [
-  "Summon SF's best Italian restaurants.",
+  'Summon SF\'s best Italian restaurants.',
   'Share your location link instantly.',
-  'Drop World Cup schedules.',
+  'Drop World Cup schedules.'
 ]
 const currentCommand = ref(commands[0])
 let cmdIdx = 0

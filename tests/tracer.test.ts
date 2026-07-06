@@ -22,7 +22,7 @@ describe('tracer bullet: S1 骨架与设计 Token', () => {
       'pulse',
       'nav-slot-presence',
       'nav-slot-typed',
-      'nav-slot-caret',
+      'nav-slot-caret'
     ]
     for (const n of names) {
       expect(mainCss, `期望含 @keyframes ${n}`).toContain(`@keyframes ${n}`)
@@ -32,6 +32,6 @@ describe('tracer bullet: S1 骨架与设计 Token', () => {
   it('main.css 注入了核心设计 token', () => {
     expect(mainCss).toContain('--color-bg-main: #eef2f7')
     expect(mainCss).toContain('--color-foreground: #111111')
-    expect(mainCss).toContain("--font-sans: 'Outfit'")
+    expect(mainCss).toContain('--font-sans: \'Outfit\'')
   })
 })

@@ -17,7 +17,10 @@
         >
           <div class="flex items-baseline justify-between">
             <span class="text-lg font-bold tracking-tight text-foreground">{{ item.media }}</span>
-            <time class="text-xs uppercase tracking-widest" style="color:var(--color-eyebrow)">{{ item.date }}</time>
+            <time
+              class="text-xs uppercase tracking-widest"
+              style="color:var(--color-eyebrow)"
+            >{{ item.date }}</time>
           </div>
           <h3 class="mt-4 text-base font-semibold leading-snug text-foreground">{{ item.title }}</h3>
           <span class="mt-4 inline-flex items-center gap-1 text-sm font-medium text-foreground opacity-70 transition group-hover:opacity-100">Read ›</span>
@@ -25,7 +28,10 @@
       </div>
 
       <div class="mt-10 text-center">
-        <a href="#" class="inline-flex items-center gap-1 text-sm font-medium text-foreground opacity-80 hover:opacity-100">View media coverage ›</a>
+        <a
+          href="#"
+          class="inline-flex items-center gap-1 text-sm font-medium text-foreground opacity-80 hover:opacity-100"
+        >View media coverage ›</a>
       </div>
     </div>
   </section>
@@ -35,6 +41,6 @@
 const items = [
   { media: 'TechCrunch', date: 'JUNE 30, 2026', title: 'Acti puts AI agents directly into your smartphone keyboard', href: '#' },
   { media: 'Digital Trends', date: 'JULY 1, 2026', title: 'Acti just turned your smartphone keyboard into an AI assistant', href: '#' },
-  { media: 'Superhuman', date: 'JULY 1, 2026', title: 'Acti drops an “Agentic Keyboard” for iOS and Android', href: '#' },
+  { media: 'Superhuman', date: 'JULY 1, 2026', title: 'Acti drops an “Agentic Keyboard” for iOS and Android', href: '#' }
 ]
 </script>
