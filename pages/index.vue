@@ -1,10 +1,12 @@
 <template>
-  <!-- 首页：S3 装配 Hero + Headlines；S4-S5 继续填充 ActiBar/Arsenal/WireIdeas/Philosophy/AskAI/Footer -->
+  <!-- 首页：S4 装配 ActiBar + Arsenal；S5 继续填充 WireIdeas/Philosophy/AskAI/Footer -->
   <div class="page-main-surface min-h-screen flex flex-col">
     <AppHeader />
     <main class="flex-1">
       <HeroSection />
       <HeadlinesSection />
+      <ActiBarSection />
+      <ArsenalSection />
     </main>
   </div>
 </template>
