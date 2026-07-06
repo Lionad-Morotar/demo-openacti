@@ -118,3 +118,15 @@ body {
 .section-white-to-main {
   background: linear-gradient(to bottom, #ffffff 0%, var(--color-bg-main) 100%);
 }
+
+/* 桌面 scroll-snap：proximity 模式（靠近 .snap-page 边界才吸附，不强打断自由滚动）。
+   只对带 snap-page 的 section（ActiBar/Arsenal/WireIdeas/Philosophy）生效。 */
+@media (min-width: 768px) {
+  html {
+    scroll-snap-type: y proximity;
+  }
+  .snap-page {
+    scroll-snap-align: start;
+    scroll-margin-top: 64px;
+  }
+}
