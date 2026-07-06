@@ -1,0 +1,10 @@
+<svg width="640" height="640" viewBox="0 0 640 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="320" cy="320" r="320" fill="url(#halo_gradient)"/>
+<defs>
+<radialGradient id="halo_gradient" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(320 320) rotate(90) scale(320)">
+<stop offset="0.5" stop-color="white" stop-opacity="0"/>
+<stop offset="0.802885" stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>

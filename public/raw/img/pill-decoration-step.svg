@@ -1,0 +1,23 @@
+<svg width="258" height="50" viewBox="0 0 258 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_step)">
+<mask id="path-1-inside-1_step" fill="white">
+<path d="M0 25C0 11.1929 11.1929 0 25 0H233C246.807 0 258 11.1929 258 25C258 38.8071 246.807 50 233 50H25C11.1929 50 0 38.8071 0 25Z"/>
+</mask>
+<path d="M0 25C0 11.1929 11.1929 0 25 0H233C246.807 0 258 11.1929 258 25C258 38.8071 246.807 50 233 50H25C11.1929 50 0 38.8071 0 25Z" fill="black" fill-opacity="0.02"/>
+<path d="M0 25C0 11.1929 11.1929 0 25 0H233C246.807 0 258 11.1929 258 25C258 38.8071 246.807 50 233 50H25C11.1929 50 0 38.8071 0 25Z" fill="white" fill-opacity="0.2"/>
+<g filter="url(#filter0_f_step)">
+<path d="M258 25C258 13.9543 249.046 5 238 5H20C8.95431 5 0 13.9543 0 25" stroke="#BFBFBF" stroke-opacity="0.5" stroke-width="2"/>
+</g>
+</g>
+<g clip-path="url(#paint0_angular_step_clip_path)" data-figma-skip-parse="true" mask="url(#path-1-inside-1_step)"><g transform="matrix(0.129 -0.001875 0.00172012 0.0218511 129 25)"><foreignObject x="-1275.05" y="-1275.05" width="2550.11" height="2550.11"><div xmlns="http://www.w3.org/1999/xhtml" style="background:conic-gradient(from 90deg,rgba(106, 106, 106, 0.5913) 0deg,rgba(0, 0, 0, 0.3) 35.2929deg,rgba(255, 255, 255, 0.5) 65.4924deg,rgba(255, 255, 255, 0.5) 190.011deg,rgba(0, 0, 0, 0.2) 225.814deg,rgba(255, 255, 255, 0.5) 249deg,rgba(255, 255, 255, 1) 310.486deg,rgba(106, 106, 106, 0.5913) 360deg);height:100%;width:100%;opacity:1"></div></foreignObject></g></g><path d="M0 25M258 25M258 25M0 25M25 0V1H233V0V-1H25V0ZM258 25M233 50V49H25V50V51H233V50ZM0 25M25 50V49C11.7452 49 1 38.2548 1 25H0H-1C-1 39.3594 10.6406 51 25 51V50ZM258 25H257C257 38.2548 246.255 49 233 49V50V51C247.359 51 259 39.3594 259 25H258ZM233 0V1C246.255 1 257 11.7452 257 25H258H259C259 10.6406 247.359 -1 233 -1V0ZM25 0V-1C10.6406 -1 -1 10.6406 -1 25H0H1C1 11.7452 11.7452 1 25 1V0Z" mask="url(#path-1-inside-1_step)"/>
+<defs>
+<filter id="filter0_f_step" x="-4.5" y="0.5" width="267" height="28" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix_step"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix_step" result="shape"/>
+<feGaussianBlur stdDeviation="1.75" result="effect1_foregroundBlur_step"/>
+</filter>
+<clipPath id="paint0_angular_step_clip_path"><path d="M0 25M258 25M258 25M0 25M25 0V1H233V0V-1H25V0ZM258 25M233 50V49H25V50V51H233V50ZM0 25M25 50V49C11.7452 49 1 38.2548 1 25H0H-1C-1 39.3594 10.6406 51 25 51V50ZM258 25H257C257 38.2548 246.255 49 233 49V50V51C247.359 51 259 39.3594 259 25H258ZM233 0V1C246.255 1 257 11.7452 257 25H258H259C259 10.6406 247.359 -1 233 -1V0ZM25 0V-1C10.6406 -1 -1 10.6406 -1 25H0H1C1 11.7452 11.7452 1 25 1V0Z" mask="url(#path-1-inside-1_step)"/></clipPath><clipPath id="clip0_step">
+<path d="M0 25C0 11.1929 11.1929 0 25 0H233C246.807 0 258 11.1929 258 25C258 38.8071 246.807 50 233 50H25C11.1929 50 0 38.8071 0 25Z" fill="white"/>
+</clipPath>
+</defs>
+</svg>
