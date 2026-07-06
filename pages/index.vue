@@ -1,13 +1,14 @@
 <template>
-  <!-- 首页：S2 装配 AppHeader；S3-S5 逐步填充 Hero / ActiBar / Arsenal / WireIdeas / Philosophy / AskAI / Footer -->
+  <!-- 首页：S3 装配 Hero + Headlines；S4-S5 继续填充 ActiBar/Arsenal/WireIdeas/Philosophy/AskAI/Footer -->
   <div class="page-main-surface min-h-screen flex flex-col">
     <AppHeader />
     <main class="flex-1">
-      <!-- sections 由后续 slice 填充 -->
+      <HeroSection />
+      <HeadlinesSection />
     </main>
   </div>
 </template>
 
 <script setup lang="ts">
-// 首页骨架：仅 AppHeader，section 待 S3-S5 填充。
+// 首页：section 由 Nuxt 自动导入的组件装配。
 </script>
