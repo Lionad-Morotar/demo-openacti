@@ -17,13 +17,23 @@ describe('ActiBarSection', () => {
     expect(text).toContain('Space Bar')
   })
 
-  it('键盘含 ACTI 四键高亮', () => {
+  it('手机含 QWERTY 键盘', () => {
     const w = mount(ActiBarSection)
-    expect(w.findAll('.actibar__key--acti')).toHaveLength(4)
+    expect(w.findAll('.actibar__key').length).toBeGreaterThanOrEqual(20)
+    expect(w.text()).toContain('Q')
   })
 
-  it('命令示例轮播含初始命令', () => {
-    expect(mount(ActiBarSection).text()).toContain('Summon')
+  it('含 4 功能卡片（AI Trigger / Summon / Share / World Cup）', () => {
+    const w = mount(ActiBarSection)
+    expect(w.findAll('.actibar__card')).toHaveLength(4)
+    expect(w.text()).toContain('AI Trigger')
+    expect(w.text()).toContain("Summon SF's best Italian restaurants")
+    expect(w.text()).toContain('Share your location link instantly')
+    expect(w.text()).toContain('Drop World Cup schedules')
+  })
+
+  it('含手机搜索框 World Cup today', () => {
+    expect(mount(ActiBarSection).text()).toContain('World Cup today')
   })
 
   it('含 Acti Bar 键取代空格键', () => {
