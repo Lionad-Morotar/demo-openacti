@@ -3,9 +3,10 @@ import { mount } from '@vue/test-utils'
 import HeroSection from '~/components/HeroSection.vue'
 
 describe('HeroSection', () => {
-  it('渲染 hero title（alt 文案对齐原站）与副标题', () => {
+  it('渲染 hero title 文案与副标题', () => {
     const wrapper = mount(HeroSection)
-    expect(wrapper.find('.hero__title-base').attributes('alt')).toBe('Think it. ACTI on.')
+    expect(wrapper.find('.hero__title').text()).toContain('Think')
+    expect(wrapper.find('.hero__title-acti').text()).toBe('ACTI')
     expect(wrapper.text()).toContain('The World’s First Agentic Keyboard')
   })
 
@@ -16,16 +17,10 @@ describe('HeroSection', () => {
     expect(hrefs.some(h => h.includes('play.google'))).toBe(true)
   })
 
-  it('showcase video 的 src 与 poster 指向 baseURL 拼接路径', () => {
+  it('光环背景（3 hero-ring-expand + halo-ring.svg）存在', () => {
     const wrapper = mount(HeroSection)
-    const video = wrapper.find('.hero__showcase video')
-    expect((video.attributes('src') || '').includes('Acti_showcase_desktop.mp4')).toBe(true)
-    expect((video.attributes('poster') || '').includes('poster-desktop.png')).toBe(true)
-  })
-
-  it('silk 虹彩背景视频存在', () => {
-    const wrapper = mount(HeroSection)
-    expect(wrapper.findAll('.hero__silk')).toHaveLength(1)
+    expect(wrapper.findAll('.hero-ring-expand')).toHaveLength(6)
+    expect(wrapper.find('.hero-ring-expand img').attributes('src') || '').toContain('halo-ring.svg')
   })
 
   it('渲染 Google AI Startups 徽章', () => {

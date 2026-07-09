@@ -4,6 +4,7 @@
     <AppHeader />
     <main class="flex-1">
       <HeroSection />
+      <VideoShowcaseSection />
       <HeadlinesSection />
       <ActiBarSection />
       <ArsenalSection />
