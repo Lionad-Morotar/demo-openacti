@@ -11,8 +11,8 @@ describe('PhilosophySection', () => {
     }
   })
 
-  it('渲染背景 A/C/T/I 字母装饰', () => {
+  it('渲染卡片 A/C/T/I 字母水印装饰', () => {
     const w = mount(PhilosophySection)
-    expect(w.findAll('.philosophy__bg-letter')).toHaveLength(4)
+    expect(w.findAll('.philosophy__card-letter')).toHaveLength(4)
   })
 })

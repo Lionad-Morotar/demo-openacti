@@ -1,31 +1,21 @@
 <template>
-  <!-- The Philosophy：4 理念超大字 + 背景半透明 A/C/T/I 字母装饰 -->
-  <section class="philosophy page-main-surface relative overflow-hidden pt-[160px] pb-[100px] px-5 md:pb-[200px] snap-page">
-    <div
-      class="philosophy__bg"
-      aria-hidden="true"
-    >
-      <span
-        v-for="(l, i) in letters"
-        :key="l"
-        class="philosophy__bg-letter"
-        :class="`philosophy__bg-letter--${i + 1}`"
-      >{{ l }}</span>
-    </div>
+  <!-- The Philosophy：大标题 + 2×2 卡片（每卡片右上角字母装饰） -->
+  <section class="philosophy page-main-surface relative overflow-hidden pt-[120px] md:pt-[160px] pb-[100px] px-5 md:pb-[200px] snap-page">
     <div class="relative mx-auto max-w-[1280px]">
-      <div
-        class="mb-8 text-center text-xs uppercase tracking-widest md:mb-12"
-        style="color:var(--color-eyebrow)"
-      >
+      <h2 class="mb-10 text-center text-4xl font-bold tracking-tight text-foreground md:text-6xl">
         The Philosophy
-      </div>
-      <div class="grid grid-cols-2 gap-8 md:grid-cols-4 md:gap-6">
+      </h2>
+      <div class="grid grid-cols-2 gap-6 md:gap-8">
         <div
           v-for="p in items"
           :key="p.word"
-          class="philosophy__item"
+          class="philosophy__card"
         >
-          <h3 class="text-3xl font-bold tracking-tight text-foreground md:text-5xl">
+          <span
+            class="philosophy__card-letter"
+            aria-hidden="true"
+          >{{ p.letter }}</span>
+          <h3 class="text-2xl font-bold tracking-tight text-foreground md:text-4xl">
             {{ p.word }}
           </h3>
           <div
@@ -42,12 +32,11 @@
 
 <script setup lang="ts">
 const items = [
-  { word: 'Amplify', sub: 'Your Bandwidth' },
-  { word: 'Command', sub: 'Your Routine' },
-  { word: 'Transcend', sub: 'App Boundaries' },
-  { word: 'Intuit', sub: 'Your Needs' }
+  { word: 'Amplify', sub: 'Your Bandwidth', letter: 'A' },
+  { word: 'Command', sub: 'Your Routine', letter: 'C' },
+  { word: 'Transcend', sub: 'App Boundaries', letter: 'T' },
+  { word: 'Intuit', sub: 'Your Needs', letter: 'I' }
 ]
-const letters = ['A', 'C', 'T', 'I']
 </script>
 
 <style scoped>
@@ -81,8 +70,27 @@ const letters = ['A', 'C', 'T', 'I']
   right: 2%;
   bottom: 5%;
 }
-.philosophy__item {
+.philosophy__card {
   position: relative;
   z-index: 1;
+  padding: 2.5rem 2rem;
+  border-radius: var(--radius-3xl);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  min-height: 180px;
+}
+/* 卡片大水印字母：占满卡片，极淡，作背景层次 */
+.philosophy__card-letter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 11rem;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--color-foreground);
+  opacity: 0.06;
+  pointer-events: none;
 }
 </style>
