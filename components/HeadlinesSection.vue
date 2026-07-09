@@ -15,10 +15,15 @@
           target="_blank"
           rel="noopener"
         >
-          <div class="flex items-baseline justify-between">
+          <div class="flex items-center gap-3">
+            <img
+              class="h-8 w-8 rounded-md object-contain"
+              :src="asset(`raw/img/press/${item.logo}.png`)"
+              :alt="item.media"
+            >
             <span class="text-lg font-bold tracking-tight text-foreground">{{ item.media }}</span>
             <time
-              class="text-xs uppercase tracking-widest"
+              class="ml-auto text-xs uppercase tracking-widest"
               style="color:var(--color-eyebrow)"
             >{{ item.date }}</time>
           </div>
@@ -38,9 +43,12 @@
 </template>
 
 <script setup lang="ts">
+import { joinBasePath } from '~/utils/publicPath'
+import { SITE_BASE } from '~/utils/site'
+const asset = (p: string) => joinBasePath(SITE_BASE, p)
 const items = [
-  { media: 'TechCrunch', date: 'JUNE 30, 2026', title: 'Acti puts AI agents directly into your smartphone keyboard', href: '#' },
-  { media: 'Digital Trends', date: 'JULY 1, 2026', title: 'Acti just turned your smartphone keyboard into an AI assistant', href: '#' },
-  { media: 'Superhuman', date: 'JULY 1, 2026', title: 'Acti drops an “Agentic Keyboard” for iOS and Android', href: '#' }
+  { media: 'TechCrunch', logo: 'techcrunch', date: 'JUNE 30, 2026', title: 'Acti puts AI agents directly into your smartphone keyboard', href: '#' },
+  { media: 'Digital Trends', logo: 'digital-trends', date: 'JULY 1, 2026', title: 'Acti just turned your smartphone keyboard into an AI assistant', href: '#' },
+  { media: 'Superhuman', logo: 'superhuman', date: 'JULY 1, 2026', title: 'Acti drops an “Agentic Keyboard” for iOS and Android', href: '#' }
 ]
 </script>
